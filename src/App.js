@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+
+import { Routes, Route, useParams } from "react-router-dom";
+
+import { Layout } from "./components/UI/layout";
+
+import "./styles.css";
+
+import ContactPage from "./components/contact";
+
+import ProductsPage from "../src/components/home/index";
+
+function Home() {
+  return <div>Home</div>;
+}
+
+function ProductPage() {
+  let params = useParams();
+  console.log(params);
+  return <div>Individual product page: {params.id}</div>;
+}
+
+function CheckoutPage() {
+  return <div>Checkout Page</div>;
+}
+
+function CheckoutSuccessPage() {
+  return <div>Checkout Success Page</div>;
+}
+
+function RouteNotFound() {
+  return <div>Page not found</div>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/contactPage" element={<ContactPage />} />
+          <Route path="/productPage" element={<ProductPage />} />
+          <Route path="/checkoutPage" element={<CheckoutPage />} />
+          <Route
+            path="/checkoutSuccessPage"
+            element={<CheckoutSuccessPage />}
+          />
+          <Route path="*" element={<RouteNotFound />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
