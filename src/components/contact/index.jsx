@@ -45,12 +45,18 @@ export function ContactPage() {
 
   return (
     <form className="formStyle" onSubmit={handleSubmit(onSubmit)}>
+      <div className= "fullNameContainer">
+      <label htmlFor="labelStyle">Full name</label>
       <input className="inputStyle" {...register("fullName")} />
+      </div>
       <p className="errorStyle">{errors.fullName?.message}</p>
+      <label htmlFor="labelStyle">Subject</label>
       <input className="inputStyle" {...register("subject")} />
       <p className="errorStyle">{errors.subject?.message}</p>
+      <label htmlFor="labelStyle">Email</label>
       <input className="inputStyle" {...register("email")} />
       <p className="errorStyle">{errors.email?.message}</p>
+      <label htmlFor="labelStyle">Body</label>
       <input className="inputStyle" {...register("body")} />
       <p className="errorStyle">{errors.body?.message}</p>
       <input className="buttonStyle" type="submit" />

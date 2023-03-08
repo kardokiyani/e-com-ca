@@ -51,3 +51,8 @@ nav a:hover {
 .errorStyle {
   color: red;
 }
+
+.fullNameContainer {
+  display: flex;
+  justify-content: center;
+}
