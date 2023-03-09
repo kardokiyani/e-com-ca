@@ -10,16 +10,26 @@ import "./styles.css";
 
 import ContactPage from "./components/contact";
 
-import ProductsPage from "../src/components/home/index";
+import ProductPage from "./components/home";
 
-function Home() {
-  return <div>Home</div>;
+import ProductSpecificPage from "./components/specificPage.jsx";
+
+export function Home() {
+  return (
+    <main>
+      <ProductPage />
+    </main>
+  );
 }
 
-function ProductPage() {
+export function SpecificPage() {
   let params = useParams();
   console.log(params);
-  return <div>Individual product page: {params.id}</div>;
+  return (
+    <main>
+      <ProductSpecificPage />
+    </main>
+  );
 }
 
 function CheckoutPage() {

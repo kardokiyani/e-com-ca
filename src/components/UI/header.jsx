@@ -3,7 +3,7 @@ import { Nav } from "./nav";
 export function Header() {
   return (
     <header>
-      <div className="headerClass">Header with logo and nav</div>
+      <div className="headerClass">KARDO`S E-COM SITE</div>
       <Nav />
     </header>
   );

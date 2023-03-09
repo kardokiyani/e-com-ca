@@ -7,6 +7,16 @@
   font-size: 20px;
 }
 
+.headerClass, .footerClass, .navStyle {
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.formStyle, .labelStyle, .errorStyle, .buttonStyle {
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .navStyle {
   display: flex;
   justify-content: center;
@@ -34,8 +44,19 @@ nav a:hover {
 }
 
 .inputStyle {
-  width: 300px;
+  width: 700px;
   padding: 5px;
+}
+
+.textareaStyle {
+  width: 700px;
+  padding: 30px;
+}
+
+.labelStyle {
+  font-size: 20px;
+  padding: 5px;
+  display: block;
 }
 
 .buttonStyle {
@@ -52,7 +73,17 @@ nav a:hover {
   color: red;
 }
 
-.fullNameContainer {
-  display: flex;
+.productContainer {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
+  gap: 20px;
+}
+
+.productContainer img {
+  width: 300px;
 }

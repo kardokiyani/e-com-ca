@@ -14,7 +14,7 @@ export function ProductPage() {
         setIsLoading(true);
         const response = await fetch(url);
         const json = await response.json();
-        setProducts(json.data);
+        setProducts(json);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -23,7 +23,7 @@ export function ProductPage() {
     }
 
     getData();
-  }, []);
+  }, [url]);
 
   if (isLoading) {
     return <div>Loading products</div>;
@@ -33,12 +33,15 @@ export function ProductPage() {
     return <div>Error loading data</div>;
   }
 
+  console.log(products);
+
   return (
-    <div>
+    <div className="productContainer">
       {products.map((product) => (
         <div key={product.id}>
           <h2>{product.title}</h2>
-          <p>{product.body}</p>
+          <img src={product.imageUrl} alt={product.title} />
+          <h3>{product.description}</h3>
         </div>
       ))}
     </div>
