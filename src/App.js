@@ -12,22 +12,12 @@ import ContactPage from "./components/contact";
 
 import ProductPage from "./components/home";
 
-import ProductSpecificPage from "./components/specificPage.jsx";
+import ProductSpecificPage from "./components/specificPage/index.jsx";
 
 export function Home() {
   return (
     <main>
       <ProductPage />
-    </main>
-  );
-}
-
-export function SpecificPage() {
-  let params = useParams();
-  console.log(params);
-  return (
-    <main>
-      <ProductSpecificPage />
     </main>
   );
 }
@@ -51,6 +41,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/contactPage" element={<ContactPage />} />
+          <Route path="/product/:id" element={<ProductSpecificPage />} />
           <Route path="/productPage" element={<ProductPage />} />
           <Route path="/checkoutPage" element={<CheckoutPage />} />
           <Route

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { SpecificPage } from "../../App";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -37,11 +36,11 @@ function ProductSpecificPage() {
   }
 
   return (
-    <div>
+    <div className="specificProductContainer">
       <h1>{product.title}</h1>
       <img src={product.imageUrl} alt={product.title} />
       <h3>{product.description}</h3>
-      {/* Display more product details as needed */}
+      <h3>{product.price}</h3>
     </div>
   );
 }

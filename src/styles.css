@@ -84,6 +84,24 @@ nav a:hover {
   gap: 20px;
 }
 
+.specificProductContainer {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+  gap: 20px;
+}
+
 .productContainer img {
   width: 300px;
+}
+
+.viewDetailsButton {
+  background-color:  rgb(168, 106, 13);
+  color: white;
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
 }

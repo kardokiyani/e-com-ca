@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
 export function ProductPage() {
@@ -42,6 +44,8 @@ export function ProductPage() {
           <h2>{product.title}</h2>
           <img src={product.imageUrl} alt={product.title} />
           <h3>{product.description}</h3>
+          <h3>{product.price}</h3>
+          <Link to={`/product/${product.id}`} className="viewDetailsButton">View product</Link>
         </div>
       ))}
     </div>
