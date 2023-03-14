@@ -42,7 +42,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/contactPage" element={<ContactPage />} />
           <Route path="/product/:id" element={<ProductSpecificPage />} />
-          <Route path="/productPage" element={<ProductPage />} />
           <Route path="/checkoutPage" element={<CheckoutPage />} />
           <Route
             path="/checkoutSuccessPage"

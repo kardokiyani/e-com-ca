@@ -11,9 +11,6 @@
           <Link to="/contactPage">Contact Page</Link>
         </li>
         <li>
-          <Link to="/productPage">Product Page</Link>
-        </li>
-        <li>
           <Link to="/checkoutPage">Checkout Page</Link>
         </li>
         <li>
