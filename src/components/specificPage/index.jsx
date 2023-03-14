@@ -39,8 +39,8 @@ function ProductSpecificPage() {
     <div className="specificProductContainer">
       <h1>{product.title}</h1>
       <img src={product.imageUrl} alt={product.title} />
-      <h3>{product.description}</h3>
-      <h3>{product.price}</h3>
+      <p className="descriptionStyle">{product.description}</p>
+      <p className="priceStyle">{product.price}</p>
     </div>
   );
 }
