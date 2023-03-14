@@ -8,7 +8,7 @@
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/contactPage">Contact Page</Link>
+          <Link to="/contactPage">Contact</Link>
         </li>
       </ul>
     </nav>
