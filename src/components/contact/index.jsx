@@ -25,7 +25,7 @@ const schema = yup
     body: yup
       .string()
       .min(3, "Your body should be at least 3 characters.")
-      .max(50, "Your body cannot be longer than 15 characters.")
+      .max(50, "Your body cannot be longer than 50 characters.")
       .required("Please enter your body"),
   })
   .required();
@@ -63,7 +63,7 @@ export function ContactPage() {
       <label className="labelStyle" htmlFor="body">
         Body
       </label>
-      <textarea className="textareaStyle" {...register("body")} />
+      <input className="inputBodyStyle" {...register("body")} />
       <p className="errorStyle">{errors.body?.message}</p>
       <input className="buttonStyle" type="submit" />
     </form>

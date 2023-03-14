@@ -57,7 +57,7 @@ export function ProductPage() {
             <img src={product.imageUrl} alt={product.title} />
             <p className="descriptionStyle">{product.description}</p>
             <p className="priceStyle">{product.price}</p>
-            <Link to={`/product/${product.id}`} className="viewDetailsButton">
+            <Link to={`/product/${product.id}`} className="viewProductButton">
               View product
             </Link>
           </div>
