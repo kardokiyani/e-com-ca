@@ -5,6 +5,7 @@
   padding: 30px;
   text-align: center;
   font-size: 20px;
+  margin-top: 30px;
 }
 
 .headerClass, .footerClass, .navStyle {
@@ -74,6 +75,10 @@ nav a:hover {
   border-radius: 10px;
 }
 
+.buttonStyle:hover {
+  text-decoration: underline;
+}
+
 .errorStyle {
   color: red;
 }
@@ -110,6 +115,20 @@ nav a:hover {
   cursor: pointer;
   text-decoration: none;
   border-radius: 10px;
+}
+
+.backHomeButton {
+  background-color:  rgb(168, 106, 13);
+  color: white;
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.viewProductButton:hover, .backHomeButton:hover {
+  text-decoration: underline;
 }
 
 .searchContainer {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -41,9 +41,11 @@ function ProductSpecificPage() {
       <img src={product.imageUrl} alt={product.title} />
       <p className="descriptionStyle">{product.description}</p>
       <p className="priceStyle">{product.price}</p>
+      <Link to="/" className="backHomeButton">Back home</Link>
     </div>
   );
 }
 
 export default ProductSpecificPage;
+
 
