@@ -14,6 +14,8 @@ import ProductPage from "./components/home";
 
 import ProductSpecificPage from "./components/specificPage/index.jsx";
 
+import { CartPage } from "./components/cart";
+
 export function Home() {
   return (
     <main>
@@ -42,7 +44,15 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/contactPage" element={<ContactPage />} />
           <Route path="/product/:id" element={<ProductSpecificPage />} />
+          <Route path="/cartPage" element={<CartPage />} />
+          <Route path="/cartPage" component={CartPage} />
           <Route path="/checkoutPage" element={<CheckoutPage />} />
+          <Route
+            path="/checkout"
+            render={(props) => (
+              <CheckoutPage {...props} cart={props.location.state.cart} />
+            )}
+          />
           <Route
             path="/checkoutSuccessPage"
             element={<CheckoutSuccessPage />}
