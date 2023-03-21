@@ -113,7 +113,8 @@ nav a:hover {
   gap: 20px;
 }
 
-.specificProductContainer {
+.specificProductContainer,
+.cartProductContainer {
   text-align: left;
   max-width: 500px;
   margin: 0 auto;

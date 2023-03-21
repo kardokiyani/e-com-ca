@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import CartPage from "../cartFunctionality";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -11,6 +10,7 @@ function ProductSpecificPage() {
   const [isError, setIsError] = useState(false);
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getData() {
@@ -36,8 +36,15 @@ function ProductSpecificPage() {
   };
 
   const handleRemoveFromCart = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
+    const itemIndex = cart.findIndex((item) => item.id === productId);
+    const newCart = [...cart];
+    newCart.splice(itemIndex, 1);
+    setCart(newCart);
     setCartCount(cartCount - 1);
+  };
+
+  const handleGoToCheckout = () => {
+    navigate("/cartPage", { state: { cart } });
   };
 
   if (isLoading) {
@@ -54,7 +61,6 @@ function ProductSpecificPage() {
       <img src={product.imageUrl} alt={product.title} />
       <p className="descriptionStyle">{product.description}</p>
       <p className="priceStyle">{product.price}</p>
-      <CartPage />
       <Link to="/" className="backHomeButton">
         Back home
       </Link>
@@ -63,18 +69,18 @@ function ProductSpecificPage() {
         <h2>Cart ({cartCount})</h2>
         <button onClick={handleAddToCart}>Add to cart</button>
         <ul>
-          {cart.map((item) => (
-            <li key={item.id}>
+          {cart.map((item, index) => (
+            <li key={`${item.id}-${index}`}>
               {item.title} - {item.price}
-              <button onClick={() => handleRemoveFromCart(item.id)}>
+              <button onClick={() => handleRemoveFromCart(index)}>
                 Remove from cart
               </button>
             </li>
           ))}
         </ul>
-        <Link to="/cartPage" className="checkoutButton">
+        <button onClick={handleGoToCheckout} className="checkoutButton">
           Go to checkout
-        </Link>
+        </button>
       </div>
     </div>
   );

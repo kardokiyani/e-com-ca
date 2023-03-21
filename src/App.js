@@ -24,10 +24,6 @@ export function Home() {
   );
 }
 
-function CheckoutPage() {
-  return <div>Checkout Page</div>;
-}
-
 function CheckoutSuccessPage() {
   return <div>Checkout Success Page</div>;
 }
@@ -45,14 +41,6 @@ function App() {
           <Route path="/contactPage" element={<ContactPage />} />
           <Route path="/product/:id" element={<ProductSpecificPage />} />
           <Route path="/cartPage" element={<CartPage />} />
-          <Route path="/cartPage" component={CartPage} />
-          <Route path="/checkoutPage" element={<CheckoutPage />} />
-          <Route
-            path="/checkout"
-            render={(props) => (
-              <CheckoutPage {...props} cart={props.location.state.cart} />
-            )}
-          />
           <Route
             path="/checkoutSuccessPage"
             element={<CheckoutSuccessPage />}
