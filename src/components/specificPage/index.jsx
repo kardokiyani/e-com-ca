@@ -61,18 +61,22 @@ function ProductSpecificPage() {
       <img src={product.imageUrl} alt={product.title} />
       <p className="descriptionStyle">{product.description}</p>
       <p className="priceStyle">{product.price}</p>
-      <Link to="/" className="backHomeButton">
-        Back home
-      </Link>
 
       <div className="cartContainer">
         <h2>Cart ({cartCount})</h2>
-        <button onClick={handleAddToCart}>Add to cart</button>
+        <button className="addCartStyle" onClick={handleAddToCart}>
+          Add to cart
+        </button>
         <ul>
           {cart.map((item, index) => (
             <li key={`${item.id}-${index}`}>
-              {item.title} - {item.price}
-              <button onClick={() => handleRemoveFromCart(index)}>
+              <div className="titlePriceStyle">
+                {item.title} - {item.price}
+              </div>
+              <button
+                className="removeCartStyle"
+                onClick={() => handleRemoveFromCart(index)}
+              >
                 Remove from cart
               </button>
             </li>
@@ -81,6 +85,11 @@ function ProductSpecificPage() {
         <button onClick={handleGoToCheckout} className="checkoutButton">
           Go to checkout
         </button>
+      </div>
+      <div className="backHomeButtonContainer">
+        <Link to="/" className="backHomeButton">
+          Back home
+        </Link>
       </div>
     </div>
   );

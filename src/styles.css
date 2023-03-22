@@ -138,7 +138,9 @@ nav a:hover {
 }
 
 .backHomeButton,
-.checkoutButton {
+.checkoutButton,
+.purchaseButton,
+.addToCartStyle {
   background-color: rgb(168, 106, 13);
   color: white;
   width: 200px;
@@ -146,6 +148,11 @@ nav a:hover {
   cursor: pointer;
   text-decoration: none;
   border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.backHomeButtonContainer {
+  margin-top: 30px;
 }
 
 .viewProductButton:hover,
@@ -170,5 +177,41 @@ nav a:hover {
 .descriptionStyle,
 .priceStyle {
   font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cartEmptyStyle {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  background-color: rgb(168, 106, 13);
+  color: white;
+  border-radius: 20px;
+}
+
+.addCartStyle {
+  background-color: green;
+  color: white;
+  width: 200px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.removeCartStyle {
+  background-color: red;
+  color: white;
+  width: 200px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 5px;
+}
+
+.titlePriceStyle {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

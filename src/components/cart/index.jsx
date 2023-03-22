@@ -8,7 +8,7 @@ export const CartPage = () => {
     <div className="cartProductContainer">
       <h1>Your Cart</h1>
       {state.cart.length === 0 ? (
-        <p>Your cart is empty</p>
+        <p className="cartEmptyStyle">Your cart is empty!</p>
       ) : (
         <ul>
           {state.cart.map((item) => (
@@ -17,6 +17,7 @@ export const CartPage = () => {
               <img src={item.imageUrl} alt={item.title} />
               <p className="descriptionStyle">{item.description}</p>
               <p className="priceStyle">{item.price}</p>
+              <button className="purchaseButton">Purchase</button>
             </li>
           ))}
         </ul>
