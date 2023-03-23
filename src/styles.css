@@ -226,8 +226,6 @@ nav a:hover {
   justify-content: center;
 }
 
-// gggg
-
 @media only screen and (max-width: 653px) {
   .descriptionStyle {
     text-align: center;
@@ -288,13 +286,6 @@ nav a:hover {
 
   .successH1 {
     font-size: 20px;
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .productContainer {
-    grid-template-columns: 1fr 1fr;
     text-align: center;
   }
 }
