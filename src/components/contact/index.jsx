@@ -30,7 +30,7 @@ const schema = yup
   })
   .required();
 
-export function ContactPage() {
+export function Contact() {
   const {
     register,
     handleSubmit,
@@ -70,4 +70,4 @@ export function ContactPage() {
   );
 }
 
-export default ContactPage;
+export default Contact;

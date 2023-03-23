@@ -215,3 +215,13 @@ nav a:hover {
 .titlePriceStyle {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+.successH1 {
+  display: flex;
+  justify-content: center;
+}
+
+.backHomeContainer {
+  display: flex;
+  justify-content: center;
+}

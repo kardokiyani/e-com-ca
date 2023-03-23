@@ -44,7 +44,7 @@ function ProductSpecificPage() {
   };
 
   const handleGoToCheckout = () => {
-    navigate("/cartPage", { state: { cart } });
+    navigate("/checkout", { state: { cart } });
   };
 
   if (isLoading) {

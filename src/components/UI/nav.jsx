@@ -12,10 +12,10 @@ export function Nav({ handleAddToCart }) {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/contactPage">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
         <li>
-          <Link to="/cartPage">
+          <Link to="/checkout">
             <FontAwesomeIcon icon={faShoppingCart} onClick={handleAddToCart} />
           </Link>
         </li>

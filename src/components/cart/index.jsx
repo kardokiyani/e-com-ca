@@ -1,7 +1,7 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-export const CartPage = () => {
+export const Checkout = () => {
   const { state } = useLocation();
 
   return (
@@ -17,7 +17,9 @@ export const CartPage = () => {
               <img src={item.imageUrl} alt={item.title} />
               <p className="descriptionStyle">{item.description}</p>
               <p className="priceStyle">{item.price}</p>
-              <button className="purchaseButton">Purchase</button>
+              <Link to="/checkoutSuccess" className="purchaseButton">
+                Purchase
+              </Link>
             </li>
           ))}
         </ul>

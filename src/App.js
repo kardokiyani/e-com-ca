@@ -8,13 +8,15 @@ import { Layout } from "./components/UI/layout";
 
 import "./styles.css";
 
-import ContactPage from "./components/contact";
+import Contact from "./components/contact";
 
 import ProductPage from "./components/home";
 
 import ProductSpecificPage from "./components/specificPage/index.jsx";
 
-import { CartPage } from "./components/cart";
+import { Checkout } from "./components/cart";
+
+import { CheckoutSuccess } from "./components/checkoutSuccess";
 
 export function Home() {
   return (
@@ -22,10 +24,6 @@ export function Home() {
       <ProductPage />
     </main>
   );
-}
-
-function CheckoutSuccessPage() {
-  return <div>Checkout Success Page</div>;
 }
 
 function RouteNotFound() {
@@ -38,13 +36,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/contactPage" element={<ContactPage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductSpecificPage />} />
-          <Route path="/cartPage" element={<CartPage />} />
-          <Route
-            path="/checkoutSuccessPage"
-            element={<CheckoutSuccessPage />}
-          />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkoutSuccess" element={<CheckoutSuccess />} />
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
