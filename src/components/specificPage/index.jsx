@@ -58,7 +58,11 @@ function ProductSpecificPage() {
   return (
     <div className="specificProductContainer">
       <h1>{product.title}</h1>
-      <img src={product.imageUrl} alt={product.title} />
+      <img
+        className="specificImageStyle"
+        src={product.imageUrl}
+        alt={product.title}
+      />
       <p className="descriptionStyle">{product.description}</p>
       <p className="priceStyle">{product.price}</p>
 

@@ -14,7 +14,11 @@ export const Checkout = () => {
           {state.cart.map((item) => (
             <li key={item.id}>
               <h2>{item.title}</h2>
-              <img src={item.imageUrl} alt={item.title} />
+              <img
+                className="cartImageStyle"
+                src={item.imageUrl}
+                alt={item.title}
+              />
               <p className="descriptionStyle">{item.description}</p>
               <p className="priceStyle">{item.price}</p>
               <Link to="/checkoutSuccess" className="purchaseButton">

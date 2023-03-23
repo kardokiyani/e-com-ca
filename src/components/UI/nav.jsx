@@ -7,7 +7,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export function Nav({ handleAddToCart }) {
   return (
     <nav className="navStyle">
-      <ul>
+      <ul className="ulStyle">
         <li>
           <Link to="/">Home</Link>
         </li>
