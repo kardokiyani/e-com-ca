@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Nav } from "../UI/nav";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -57,6 +58,7 @@ function ProductSpecificPage() {
 
   return (
     <div className="specificProductContainer">
+      <Nav handleAddToCart={handleAddToCart} cartCount={cartCount} />
       <h1>{product.title}</h1>
       <img
         className="specificImageStyle"

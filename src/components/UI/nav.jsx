@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-export function Nav({ handleAddToCart }) {
+export function Nav({ handleAddToCart, cartCount }) {
   return (
     <nav className="navStyle">
       <ul className="ulStyle">
@@ -17,9 +17,11 @@ export function Nav({ handleAddToCart }) {
         <li>
           <Link to="/checkout">
             <FontAwesomeIcon icon={faShoppingCart} onClick={handleAddToCart} />
+            <span className="cartCountStyle">{cartCount}</span>
           </Link>
         </li>
       </ul>
     </nav>
   );
 }
+
