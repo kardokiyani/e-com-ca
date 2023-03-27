@@ -28,7 +28,7 @@ function ProductSpecificPage() {
       }
     }
 
-    getData(`https://api.noroff.dev/api/v1/online-shop/${id}`);
+    getData();
   }, [id]);
 
   const handleAddToCart = () => {
@@ -88,6 +88,10 @@ function ProductSpecificPage() {
             </li>
           ))}
         </ul>
+        <div className="totalStyle">
+          Total: {cart.reduce((acc, item) => acc + item.price, 0)}
+        </div>
+
         <button onClick={handleGoToCheckout} className="checkoutButton">
           Go to checkout
         </button>

@@ -226,6 +226,12 @@ nav a:hover {
   justify-content: center;
 }
 
+.totalStyle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin: 5px;
+}
+
 @media only screen and (max-width: 653px) {
   .descriptionStyle {
     text-align: center;
