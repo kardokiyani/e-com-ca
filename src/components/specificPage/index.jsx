@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { Nav } from "../UI/nav";
 import { useTheCart } from "../../hooks/useTheCart";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
