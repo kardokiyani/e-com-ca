@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Nav } from "../UI/nav";
+import { useTheCart } from "../../hooks/useTheCart";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -9,9 +10,8 @@ function ProductSpecificPage() {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [cart, setCart] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
+  const { addToCart, removeFromCart, count, items } = useTheCart();
 
   useEffect(() => {
     async function getData() {
@@ -32,21 +32,27 @@ function ProductSpecificPage() {
   }, [id]);
 
   const handleAddToCart = () => {
-    setCart([...cart, product]);
-    setCartCount(cartCount + 1);
+    try {
+      addToCart(product);
+    } catch (error) {
+      setIsError(true);
+    }
   };
 
   const handleRemoveFromCart = (productId) => {
-    const itemIndex = cart.findIndex((item) => item.id === productId);
-    const newCart = [...cart];
-    newCart.splice(itemIndex, 1);
-    setCart(newCart);
-    setCartCount(cartCount - 1);
+    try {
+      const itemIndex = items.findIndex((item) => item.id === productId);
+      removeFromCart(itemIndex);
+    } catch (error) {
+      setIsError(true);
+    }
   };
 
   const handleGoToCheckout = () => {
-    navigate("/checkout", { state: { cart } });
+    navigate("/checkout", { state: { cart: items } });
   };
+  
+  
 
   if (isLoading) {
     return <div>Loading product details...</div>;
@@ -58,7 +64,6 @@ function ProductSpecificPage() {
 
   return (
     <div className="specificProductContainer">
-      <Nav handleAddToCart={handleAddToCart} cartCount={cartCount} />
       <h1>{product.title}</h1>
       <img
         className="specificImageStyle"
@@ -69,19 +74,19 @@ function ProductSpecificPage() {
       <p className="priceStyle">{product.price}</p>
 
       <div className="cartContainer">
-        <h2>Cart ({cartCount})</h2>
+        <h2>Cart ({count})</h2>
         <button className="addCartStyle" onClick={handleAddToCart}>
           Add to cart
         </button>
         <ul>
-          {cart.map((item, index) => (
+          {items.map((item, index) => (
             <li key={`${item.id}-${index}`}>
               <div className="titlePriceStyle">
                 {item.title} - {item.price}
               </div>
               <button
                 className="removeCartStyle"
-                onClick={() => handleRemoveFromCart(index)}
+                onClick={() => handleRemoveFromCart(item.id)}
               >
                 Remove from cart
               </button>
@@ -89,7 +94,7 @@ function ProductSpecificPage() {
           ))}
         </ul>
         <div className="totalStyle">
-          Total: {cart.reduce((acc, item) => acc + item.price, 0)}
+          Total: {items.reduce((acc, item) => acc + item.price, 0)}
         </div>
 
         <button onClick={handleGoToCheckout} className="checkoutButton">
@@ -102,6 +107,7 @@ function ProductSpecificPage() {
         </Link>
       </div>
     </div>
+
   );
 }
 

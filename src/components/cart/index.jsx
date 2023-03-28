@@ -1,18 +1,20 @@
-import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
 
 export const Checkout = () => {
   const { state } = useLocation();
+  const cart = state && state.cart ? state.cart : [];
   let total = 0;
 
   return (
     <div className="cartProductContainer">
       <h1>Your Cart</h1>
-      {state.cart.length === 0 ? (
+      {cart.length === 0 ? (
         <p className="cartEmptyStyle">Your cart is empty!</p>
       ) : (
         <ul>
-          {state.cart.map((item) => {
+          {cart.map((item) => {
             total += item.price;
             return (
               <li key={item.id}>
@@ -32,8 +34,8 @@ export const Checkout = () => {
           })}
           <li>
             <div className="totalStyle">
-            <h2>Total:</h2>
-            <p>{total}</p>
+              <h2>Total:</h2>
+              <p>{total}</p>
             </div>
           </li>
         </ul>
