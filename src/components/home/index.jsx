@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -43,7 +44,7 @@ export function ProductPage() {
     <div className="productPageContainer">
       <div className="searchContainer">
         <input
-        className="searchInputStyle"
+          className="searchInputStyle"
           type="text"
           placeholder="Search products"
           value={searchTerm}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams, Link, useNavigate } from "react-router-dom";
+
 import { useTheCart } from "../../hooks/useTheCart";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -50,8 +52,6 @@ function ProductSpecificPage() {
   const handleGoToCheckout = () => {
     navigate("/checkout", { state: { cart: items } });
   };
-  
-  
 
   if (isLoading) {
     return <div>Loading product details...</div>;
@@ -106,7 +106,6 @@ function ProductSpecificPage() {
         </Link>
       </div>
     </div>
-
   );
 }
 
