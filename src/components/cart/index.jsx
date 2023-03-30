@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-
 import { useTheCart } from "../../hooks/useTheCart";
 
 export const Checkout = () => {
-  const { items, count } = useTheCart();
+  const { items, count, clearCart } = useTheCart();
   let total = 0;
+
+  const handlePurchase = () => {
+    clearCart();
+  };
 
   return (
     <div className="cartProductContainer">
@@ -25,7 +28,11 @@ export const Checkout = () => {
                 />
                 <p className="descriptionStyle">{item.description}</p>
                 <p className="priceStyle">{item.price}</p>
-                <Link to="/checkoutSuccess" className="purchaseButton">
+                <Link
+                  to="/checkoutSuccess"
+                  className="purchaseButton"
+                  onClick={handlePurchase}
+                >
                   Purchase
                 </Link>
               </li>
