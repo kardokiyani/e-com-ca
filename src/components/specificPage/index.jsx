@@ -70,7 +70,7 @@ function ProductSpecificPage() {
         alt={product.title}
       />
       <p className="descriptionStyle">{product.description}</p>
-      <p className="priceStyle">{product.price}</p>
+      <p className="priceStyle">{product.discountedPrice}</p>
 
       <div className="cartContainer">
         <h2>Cart ({count})</h2>
@@ -81,7 +81,7 @@ function ProductSpecificPage() {
           {items.map((item, index) => (
             <li key={`${item.id}-${index}`}>
               <div className="titlePriceStyle">
-                {item.title} - {item.price}
+                {item.title} - {item.discountedPrice}
               </div>
               <button
                 className="removeCartStyle"
@@ -93,7 +93,7 @@ function ProductSpecificPage() {
           ))}
         </ul>
         <div className="totalStyle">
-          Total: {items.reduce((acc, item) => acc + item.price, 0)}
+          Total: {items.reduce((acc, item) => acc + item.discountedPrice, 0)}
         </div>
 
         <button onClick={handleGoToCheckout} className="checkoutButton">

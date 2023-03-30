@@ -18,7 +18,7 @@ export const Checkout = () => {
       ) : (
         <ul>
           {items.map((item) => {
-            total += item.price;
+            total += item.discountedPrice;
             return (
               <li key={item.id}>
                 <h2>{item.title}</h2>
@@ -28,7 +28,7 @@ export const Checkout = () => {
                   alt={item.title}
                 />
                 <p className="descriptionStyle">{item.description}</p>
-                <p className="priceStyle">{item.price}</p>
+                <p className="priceStyle">{item.discountedPrice}</p>
                 <Link
                   to="/checkoutSuccess"
                   className="purchaseButton"
