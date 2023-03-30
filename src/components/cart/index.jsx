@@ -1,20 +1,19 @@
 import { Link } from "react-router-dom";
 
-import { useLocation } from "react-router-dom";
+import { useTheCart } from "../../hooks/useTheCart";
 
 export const Checkout = () => {
-  const { state } = useLocation();
-  const cart = state && state.cart ? state.cart : [];
+  const { items, count } = useTheCart();
   let total = 0;
 
   return (
     <div className="cartProductContainer">
       <h1>Your Cart</h1>
-      {cart.length === 0 ? (
+      {count === 0 ? (
         <p className="cartEmptyStyle">Your cart is empty!</p>
       ) : (
         <ul>
-          {cart.map((item) => {
+          {items.map((item) => {
             total += item.price;
             return (
               <li key={item.id}>

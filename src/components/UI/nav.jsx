@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
 import { useTheCart } from "../../hooks/useTheCart";
 
-export function Nav({ handleAddToCart }) {
+export function Nav() {
   const { count } = useTheCart();
 
   return (
@@ -17,7 +20,7 @@ export function Nav({ handleAddToCart }) {
         </li>
         <li>
           <Link to="/checkout">
-            <FontAwesomeIcon icon={faShoppingCart} onClick={handleAddToCart} />
+            <FontAwesomeIcon icon={faShoppingCart} />
             {count > 0 && <span className="cartCountStyle">{count}</span>}
           </Link>
         </li>
