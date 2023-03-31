@@ -259,6 +259,26 @@ nav a:hover {
   }
 }
 
+@media only screen and (max-width: 667px) {
+  .cartProductContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+
 @media only screen and (max-width: 740px) {
   .ulStyle {
     font-size: 0.4rem;
@@ -290,7 +310,7 @@ nav a:hover {
   }
 
   .footerClass {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .specificImageStyle,
@@ -305,5 +325,24 @@ nav a:hover {
   .successH1 {
     font-size: 20px;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cartProductContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
   }
 }
