@@ -180,6 +180,46 @@ nav a:hover {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.cardContainer {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardHeader > p {
+  padding: 0;
+  margin: 0;
+}
+
+.cardBody {
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+
+.usernameStyle {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0.5em;
+}
+
+.ratingStyle {
+  font-size: 18px;
+  color: orange;
+}
+
+.descriptionStyle {
+  margin-bottom: 0;
+  font-size: 15px;
+  margin-top: 1em;
+}
+
 .discountedPriceStyle {
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -277,7 +317,6 @@ nav a:hover {
     list-style-type: none;
   }
 }
-
 
 @media only screen and (max-width: 740px) {
   .ulStyle {

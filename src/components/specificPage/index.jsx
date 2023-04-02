@@ -71,6 +71,18 @@ function ProductSpecificPage() {
       />
       <p className="descriptionStyle">{product.description}</p>
       <p className="priceStyle">{product.discountedPrice}</p>
+      {product.reviews &&
+        product.reviews.map((review) => (
+          <div className="cardContainer" key={review.id}>
+            <div className="cardHeader">
+              <p className="usernameStyle">{review.username}</p>
+              <p className="ratingStyle">{review.rating}</p>
+            </div>
+            <div className="cardBody">
+              <p className="descriptionStyle">{review.description}</p>
+            </div>
+          </div>
+        ))}
 
       <div className="cartContainer">
         <h2>Cart ({count})</h2>
