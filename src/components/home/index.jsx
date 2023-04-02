@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -69,7 +68,11 @@ export function ProductPage() {
         {filteredProducts.map((product) => (
           <div key={product.id}>
             <h2>{product.title}</h2>
-            <img src={product.imageUrl} alt={product.title} />
+            <img
+              src={product.imageUrl}
+              alt={product.title}
+              className="productImage"
+            />
             <p className="descriptionStyle">{product.description}</p>
             {product.discountPercentage && (
               <p className="discountedPriceStyle">
